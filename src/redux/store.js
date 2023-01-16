@@ -1,41 +1,16 @@
 import { configureStore  } from '@reduxjs/toolkit'
-import {  createSlice } from '@reduxjs/toolkit'
-// import { createReducer, createAction, createSlice } from '@reduxjs/toolkit'
+import { itemsSlice } from './items/sliceItem';
+import { myValueSlice } from './myValue/slice';
+import { userSlice } from './userSlice';
 
-// make slice
-const myValueSlice = createSlice({
-  name: "myValue", 
-  // initialState: {value: 100}, 
-  initialState: 150, 
-  reducers: {
-    increment(state, action) {
-      return state + action.payload
-      // state.value += action.payload;
-    },
-    decrement(state, action) {
-      return state - action.payload;
-    },
-  }
-});
 
-console.log(myValueSlice);
-
-export const { increment, decrement } = myValueSlice.actions;
-
-const itemsSlice = createSlice({
-  name: 'item',
-  initialState: [],
-  reducers: {
-    add(state, action) {
-      state.push(action.payload)
-    },
-    remove(state, action) {
-      return state.filter(item => item.id !== action.payload);
-    },
+export const store = configureStore({
+  reducer: {
+    myValue: myValueSlice.reducer,
+    items: itemsSlice.reducer,
+    user: userSlice.reducer
   },
 })
-
-export const {add, remove} = itemsSlice.actions;
 
 // export const increment = createAction('myValue/increment');
 // export const decrement = createAction('myValue/decrement');
@@ -59,12 +34,6 @@ export const {add, remove} = itemsSlice.actions;
 // });
 // // 
 
-export const store = configureStore({
-  reducer: {
-    myValue: myValueSlice.reducer,
-    items: itemsSlice.reducer,
-  },
-})
 
 // export const store = configureStore({
 //   reducer: {

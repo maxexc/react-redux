@@ -1,5 +1,5 @@
 import { Link, Outlet } from "react-router-dom";
-import { decrement, increment } from "redux/store"
+import { decrement, increment } from "redux/myValue/slice"
 import {useSelector, useDispatch} from 'react-redux';
 
 
