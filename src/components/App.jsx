@@ -1,40 +1,18 @@
+import { LoginPage } from 'page/LoginPage';
 import React from 'react'
-import {useSelector, useDispatch} from 'react-redux';
-import { decrement, increment } from 'redux/store';
+import { Navigate, Route, Routes } from "react-router-dom";
+import { Layout } from './Layout';
 
 
-const App = () => {
-  const dispatch = useDispatch();
-  const valueRedux = useSelector(state => state.myValue);
-  console.log(valueRedux);
+const App = () => { 
 
   return (
-    <>
-      <div
-        style={{
-          height: '50vh',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          fontSize: 40,
-          color: '#010101'
-        }}
-      >
-        React Redux Test
-      </div>
-      <div 
-          style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center'}}>
-          <nav>
-              {valueRedux}
-              <button onClick={() => dispatch(increment(100))}>Increment</button>
-              <button onClick={() => dispatch(decrement(50))}>Decrement</button>
-          </nav>
-      </div>
-      
-    </>    
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route path="login" element={<LoginPage />} />
+        <Route path="*" element={<Navigate to="/" replace/>} />     
+      </Route>      
+    </Routes>    
   );
 };
 
