@@ -15,7 +15,7 @@ export const AppBar = () => {
         <nav>
             <Link to="/login" style={{paddingRight: '20px' }}>Log in</Link>
         </nav>   
-        {isLoggedIn && <UserMenu />}
+            {isLoggedIn && <UserMenu />}
     </header>
     )
 }
