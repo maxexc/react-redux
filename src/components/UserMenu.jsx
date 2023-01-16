@@ -13,7 +13,7 @@ export const UserMenu = () => {
     <div>
             {login} 
             {isLoggedIn && 
-            <button onClick={() => dispatch(logOut())}>
+            <button type='button' onClick={() => dispatch(logOut())}>
                 Log Out
             </button>}
     </div>
