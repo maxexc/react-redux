@@ -1,8 +1,10 @@
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom"
 import { UserMenu } from "./UserMenu";
 
 
 export const AppBar = () => {
+    const isLoggedIn = useSelector(state => state.user.isLoggedIn)
 
     return (
         <header style={{
@@ -13,7 +15,7 @@ export const AppBar = () => {
         <nav>
             <Link to="/login" style={{paddingRight: '20px' }}>Log in</Link>
         </nav>   
-        <UserMenu />
+        {isLoggedIn && <UserMenu />}
     </header>
     )
 }

@@ -14,12 +14,10 @@ export const LoginForm = () => {
         console.log(form.elements.login.value);
         form.reset();        
         //         or we can do like this:
-        
+
         // console.log(e.currentTarget.elements.login.value);
         // dispatch(logIn(e.currentTarget.elements.login.value));
-        // e.currentTarget.reset()
-        
-        
+        // e.currentTarget.reset()        
     };
 
     return (
