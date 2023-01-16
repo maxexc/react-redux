@@ -4,13 +4,18 @@ import {logOut} from '../redux/userSlice'
 export const UserMenu = () => {
     const dispatch = useDispatch()
     const login = useSelector(state => state.user.login);
+    const isLoggedIn = useSelector(state => state.user.isLoggedIn)
+    if (login === '') {
+        return !isLoggedIn;
+    }
 
     return (
     <div>
-            {login}            
+            {login} 
+            {isLoggedIn && 
             <button onClick={() => dispatch(logOut())}>
                 Log Out
-            </button>
+            </button>}
     </div>
     )
 }; 
