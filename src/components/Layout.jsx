@@ -1,6 +1,7 @@
-import { Link, Outlet } from "react-router-dom";
-import { decrement, increment } from "redux/myValue/slice"
-import {useSelector, useDispatch} from 'react-redux';
+import { Outlet } from "react-router-dom";
+import { AppBar } from "./AppBar";
+import { useDispatch, useSelector } from "react-redux";
+import { decrement, increment } from "redux/myValue/slice";
 
 
 export const Layout = () => {
@@ -9,7 +10,11 @@ export const Layout = () => {
     console.log(valueRedux);
 
     return (
-        <>
+        <>            
+            <AppBar />
+        <hr />
+        <br />
+            <Outlet />  
             <div
                 style={{
                 height: '50vh',
@@ -22,22 +27,15 @@ export const Layout = () => {
             >
                 React Redux Test
             </div>
-            <div 
+            <div
                 style={{
                 display: 'flex',
-                justifyContent: 'center',
-                flexDirection: 'column',
-                alignItems: 'center'}}>
-                <nav>
-                        <Link to="/login" style={{paddingRight: '20px' }}>Log in</Link>
+                gap: '10px',
+                justifyContent: 'center' }}>
                     {valueRedux}
                     <button onClick={() => dispatch(increment(100))}>Increment</button>
                     <button onClick={() => dispatch(decrement(50))}>Decrement</button>
-                </nav>             
             </div>
-        <hr />
-        <br />
-        <Outlet/>  
       </>
     )
 }
