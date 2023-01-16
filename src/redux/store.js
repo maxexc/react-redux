@@ -11,9 +11,9 @@ export const store = configureStore({
     items: itemsSlice.reducer,
     user: userSlice.reducer
   },
-  middleware: (getDefaultMiddleware) => 
+  middleware: getDefaultMiddleware => 
   [...getDefaultMiddleware(), logger],
-})
+});
 
 // export const increment = createAction('myValue/increment');
 // export const decrement = createAction('myValue/decrement');

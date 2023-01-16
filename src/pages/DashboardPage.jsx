@@ -12,5 +12,6 @@ export const DashboardPage = () => {
             navigate('/login', {replace: true})
         }
     }, [isLoggedIn, navigate]);
+    
     return <div>Dashboard Page</div>
 }

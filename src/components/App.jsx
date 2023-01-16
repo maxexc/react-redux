@@ -1,8 +1,7 @@
 // import { LoginPage } from 'pages/LoginPage';
 // import { DashboardPage } from 'pages/DashboardPage';
-import { LoginPage, DashboardPage } from 'pages';
-import React from 'react'
 import { Navigate, Route, Routes } from "react-router-dom";
+import { LoginPage, DashboardPage } from 'pages';
 import { Layout } from './Layout';
 
 
