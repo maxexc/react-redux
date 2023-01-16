@@ -22,7 +22,11 @@ const App = () => {
       >
         React Redux Test
       </div>
-      <div>
+      <div 
+          style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center'}}>
           <nav>
               {valueRedux}
               <button onClick={() => dispatch(increment(100))}>Increment</button>
