@@ -9,14 +9,17 @@ export const LoginForm = () => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log(e.currentTarget.elements.login.value);
-        dispatch(logIn(e.currentTarget.elements.login.value));
-        e.currentTarget.reset()
+        const form = e.currentTarget;
+        dispatch(logIn(form.elements.login.value));
+        console.log(form.elements.login.value);
+        form.reset();        
         //         or we can do like this:
         
-        // const form = e.currentTarget;
-        // dispatch(logIn(form.elements.login.value));
-        // form.reset();
+        // console.log(e.currentTarget.elements.login.value);
+        // dispatch(logIn(e.currentTarget.elements.login.value));
+        // e.currentTarget.reset()
+        
+        
     };
 
     return (

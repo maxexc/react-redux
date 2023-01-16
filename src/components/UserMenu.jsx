@@ -1,3 +1,6 @@
+import { useSelector } from 'react-redux'
+
 export const UserMenu = () => {
-    return <div>UserMenu</div>
+    const login = useSelector(state => state.user.login)
+    return <div>{login}</div>
 };
