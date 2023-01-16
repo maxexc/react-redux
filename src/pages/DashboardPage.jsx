@@ -3,9 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from 'react-redux'
 
 
-
-
-
 export const DashboardPage = () => {
     const navigate = useNavigate();
     const isLoggedIn = useSelector(state => state.user.isLoggedIn);
@@ -14,6 +11,6 @@ export const DashboardPage = () => {
         if(!isLoggedIn) {
             navigate('/login', {replace: true})
         }
-    });
+    }, [isLoggedIn, navigate]);
     return <div>Dashboard Page</div>
 }
