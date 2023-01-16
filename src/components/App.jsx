@@ -12,7 +12,7 @@ const App = () => {
     <>
       <div
         style={{
-          height: '100vh',
+          height: '50vh',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
