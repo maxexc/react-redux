@@ -5,11 +5,9 @@ export const LoginPage = () => {
             style={{
                 display: 'flex',
                 justifyContent: 'center',
-                flexDirection: 'row',
-                alignItems: 'center',
-                marginTop: '20px'}}>
+                flexDirection: 'row'}}>
                 <input text="text" name="login" />
-                <br />
+                
                  <button type="submit">Log in</button>
             </form>
         </div>
