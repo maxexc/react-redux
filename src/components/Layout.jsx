@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { decrement, increment } from "redux/store"
 import {useSelector, useDispatch} from 'react-redux';
 
@@ -27,6 +28,7 @@ export const Layout = () => {
           justifyContent: 'center',
           alignItems: 'center'}}>
           <nav>
+                <Link to="/login">Log in</Link>
               {valueRedux}
               <button onClick={() => dispatch(increment(100))}>Increment</button>
               <button onClick={() => dispatch(decrement(50))}>Decrement</button>
