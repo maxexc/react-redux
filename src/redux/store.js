@@ -1,7 +1,8 @@
-import { configureStore  } from '@reduxjs/toolkit'
+import { configureStore, } from '@reduxjs/toolkit'
 import { itemsSlice } from './items/sliceItem';
 import { myValueSlice } from './myValue/slice';
 import { userSlice } from './userSlice';
+import logger from 'redux-logger'
 
 
 export const store = configureStore({
@@ -10,6 +11,8 @@ export const store = configureStore({
     items: itemsSlice.reducer,
     user: userSlice.reducer
   },
+  middleware: (getDefaultMiddleware) => 
+  [...getDefaultMiddleware(), logger],
 })
 
 // export const increment = createAction('myValue/increment');
