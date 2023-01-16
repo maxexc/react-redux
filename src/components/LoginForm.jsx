@@ -10,6 +10,9 @@ export const LoginForm = () => {
     const handleSubmit = e => {
         e.preventDefault();
         const form = e.currentTarget;
+        if (form.elements.login.value === '') {
+            return alert('It cannot be empty. Please try again.')
+        }
         dispatch(logIn(form.elements.login.value));
         console.log(form.elements.login.value);
         form.reset();        
