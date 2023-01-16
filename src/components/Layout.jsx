@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { decrement, increment } from "redux/store"
 import {useSelector, useDispatch} from 'react-redux';
 
@@ -26,13 +26,15 @@ export const Layout = () => {
           style={{
           display: 'flex',
           justifyContent: 'center',
+          flexDirection: 'column',
           alignItems: 'center'}}>
           <nav>
-                <Link to="/login">Log in</Link>
+                <Link to="/login" style={{paddingRight: '20px' }}>Log in</Link>
               {valueRedux}
               <button onClick={() => dispatch(increment(100))}>Increment</button>
               <button onClick={() => dispatch(decrement(50))}>Decrement</button>
           </nav>
+          <Outlet/>  
       </div>
       </>
     )
