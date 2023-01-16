@@ -3,6 +3,11 @@ export const LoginForm = () => {
     const handleSubmit = e => {
         e.preventDefault();
         console.log(e.currentTarget.elements.login.value);
+        e.currentTarget.reset()
+        //         or we can do like this:
+        
+        // const form = e.currentTarget;
+        // form.reset();
     };
 
     return (
