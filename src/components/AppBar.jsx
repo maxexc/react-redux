@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { Link, Outlet } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { UserMenu } from "./UserMenu";
 
 
